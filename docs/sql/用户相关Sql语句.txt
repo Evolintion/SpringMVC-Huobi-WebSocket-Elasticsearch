@@ -1,0 +1,66 @@
+-- 用户表
+create table `user`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`account` varchar(255) NOT NULL DEFAULT '0',
+`phone` varchar(255) NOT NULL DEFAULT '0',
+`email` varchar(255) NOT NULL DEFAULT '0',
+`password` varchar(255) NOT NULL DEFAULT '0',
+`pay_password` varchar(255) NOT NULL DEFAULT '0',
+`parent_id` bigint unsigned NOT NULL DEFAULT '0',
+`head_pic` varchar(255) NOT NULL DEFAULT '/defaultpic.png',
+`invite_code` varchar(255) NOT NULL DEFAULT '0',
+`status` smallint(6) NOT NULL DEFAULT '0',
+`is_auth` smallint(6) NOT NULL DEFAULT '0',
+`nickname` varchar(255) NOT NULL DEFAULT '0',
+`nationality` varchar(255) NOT NULL DEFAULT '0',
+`itc` varchar(255) NOT NULL DEFAULT '0',
+`register_candy` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`invite_candy` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`create_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`is_exist` smallint(6) NOT NULL DEFAULT '0',
+KEY `account`(`account`),
+KEY `phone`(`phone`),
+KEY `email`(`email`),
+KEY `invite_code`(`invite_code`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+-- 用户钱包表
+create table `user_wallet`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`user_id` bigint unsigned NOT NULL DEFAULT '0',
+`currency_id` bigint unsigned NOT NULL DEFAULT '0',
+`legal_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`lock_legal_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`change_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`lock_change_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`lever_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`lock_lever_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`online_balance` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`status` smallint(6) NOT NULL DEFAULT '0',
+`address` varchar(255) NOT NULL DEFAULT '0',
+`private_key` varchar(255) NOT NULL DEFAULT '0',
+`create_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`put_time` bigint NOT NULL DEFAULT '0',
+KEY `user_id`(`user_id`),
+KEY `currency_id`(`currency_id`),
+KEY `address`(`address`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+-- token表
+create table `token`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`token` varchar(255) NOT NULL DEFAULT '0',
+`time` bigint NOT NULL DEFAULT '0',
+`user_id` bigint NOT NULL DEFAULT '0',
+KEY `token`(`token`),
+KEY `user_id`(`user_id`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+
+

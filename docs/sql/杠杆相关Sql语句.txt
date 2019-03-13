@@ -1,0 +1,41 @@
+-- 杠杆表
+create table `lever`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`type` smallint(6) NOT NULL DEFAULT '0',
+`user_id` bigint NOT NULL DEFAULT '0',
+`currency_id` bigint NOT NULL DEFAULT '0',
+`legal_id` bigint NOT NULL DEFAULT '0',
+`origin_price` decimal(25,8) unsigned NOT NULL DEFAULT '0.00000000',
+`price` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`now_price` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`stop_win_money` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`stop_lose_money` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`share` int(10) NOT NULL DEFAULT '0',
+`number` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`multiple` int(10) NOT NULL DEFAULT '0',
+`origin_caution_money` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`caution_money` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`fact_profits` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`trade_fee` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`overnight` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`overnight_money` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`status` smallint(6) NOT NULL DEFAULT '0',
+`settled` smallint(6) NOT NULL DEFAULT '0',
+`create_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`deal_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`update_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`handle_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`complete_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`is_exist` smallint(6) NOT NULL DEFAULT '0',
+KEY `user_id`(`user_id`),
+KEY `currency_id`(`currency_id`),
+KEY `legal_id`(`legal_id`),
+KEY `is_exist`(`is_exist`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+
+

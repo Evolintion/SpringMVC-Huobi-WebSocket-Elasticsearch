@@ -1,0 +1,28 @@
+-- 设置表
+create table `setting`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`key` varchar(255) NOT NULL DEFAULT '0',
+`value` varchar(255) NOT NULL DEFAULT '0',
+KEY `key`(`key`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+-- 语言表
+create table `language`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`key` varchar(255) NOT NULL DEFAULT '0',
+`value` varchar(65532) NOT NULL DEFAULT '0',
+KEY `key`(`key`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+
+

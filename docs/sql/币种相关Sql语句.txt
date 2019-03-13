@@ -1,0 +1,41 @@
+-- 币种表
+create table `currency`(
+`id` bigint unsigned NOT NULL auto_increment primary key,
+`name` varchar(255) NOT NULL DEFAULT '0',
+`logo` varchar(255) NOT NULL DEFAULT '0',
+`online_multiple` smallint(6) NOT NULL DEFAULT '0',
+`is_recharge` smallint(6) NOT NULL DEFAULT '0',
+`is_take` smallint(6) NOT NULL DEFAULT '0',
+`min_take_number` decimal(25,8) unsigned NOT NULL DEFAULT '0.00000000',
+`take_rate` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`is_legal` smallint(6) NOT NULL DEFAULT '0',
+`is_ctoc` smallint(6) NOT NULL DEFAULT '0',
+`is_match` smallint(6) NOT NULL DEFAULT '0',
+`min_legal` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`max_legal` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`min_ctoc` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`max_ctoc` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`usdt` decimal(25,8) NOT NULL DEFAULT '0.00000000',
+`type` varchar(255) NOT NULL DEFAULT '0',
+`contract_address` varchar(255) NOT NULL DEFAULT '0',
+`account` varchar(255) NOT NULL DEFAULT '0',
+`private_key` varchar(255) NOT NULL DEFAULT '0',
+`price_scale` smallint(6) NOT NULL DEFAULT '0',
+`number_scale` smallint(6) NOT NULL DEFAULT '0',
+`is_display` smallint(6) NOT NULL DEFAULT '0',
+`create_time` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`is_exist` smallint(6) NOT NULL DEFAULT '0',
+KEY `is_legal`(`is_legal`),
+KEY `is_ctoc`(`is_ctoc`),
+KEY `is_match`(`is_match`),
+KEY `is_exist`(`is_exist`),
+KEY `is_display`(`is_display`),
+KEY `type`(`type`)
+)
+ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+
+
